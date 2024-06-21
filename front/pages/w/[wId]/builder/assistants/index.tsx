@@ -83,7 +83,7 @@ export default function WorkspaceAssistants({
   const includes: ("authors" | "usage")[] = (() => {
     switch (tabScope) {
       case "published":
-        return ["authors"];
+        return ["authors", "usage"];
       case "private":
       case "workspace":
         return ["usage"];
@@ -206,7 +206,7 @@ export default function WorkspaceAssistants({
     default:
       assertNever(orderBy);
   }
-
+  console.log(filteredAgents);
   useEffect(() => {
     if (tabScope === "global") {
       setOrderBy("magic");
