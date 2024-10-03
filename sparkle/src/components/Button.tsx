@@ -13,26 +13,36 @@ import {
 import { ChevronDownIcon } from "@sparkle/icons";
 import { classNames } from "@sparkle/lib/utils";
 
+export const BUTTON_VARIANTS = [
+  "primary",
+  "highlight",
+  "warning",
+  "outline",
+  "secondary",
+  "ghost",
+] as const;
+export type ButtonVariantType = (typeof BUTTON_VARIANTS)[number];
+
+const variantButtonStyles: Record<ButtonVariantType, string> = {
+  primary:
+    "s-bg-primary-800 s-text-primary-50 hover:s-text-white hover:s-bg-primary-600 active:s-bg-primary-900 disabled:s-bg-primary-400",
+  highlight:
+    "s-bg-action-500 s-text-white hover:s-bg-action-400 active:s-bg-action-600 disabled:s-bg-action-300",
+  warning:
+    "s-bg-warning-500 s-text-white hover:s-bg-warning-400 active:s-bg-warning-600  disabled:s-bg-warning-300",
+  outline:
+    "s-border s-text-primary-950 s-border-border-dark s-bg-background hover:s-text-primary-900 hover:s-bg-primary-100 hover:s-border-primary-200 active:s-bg-primary-300 disabled:s-text-primary-400 disabled:s-border-structure-100",
+  secondary:
+    "s-border s-border-primary-200/0 s-bg-primary-200 s-text-primary-950 hover:s-text-primary-900 hover:s-bg-primary-100 hover:s-border-primary-200 active:s-bg-primary-200 disabled:s-text-primary-500",
+  ghost:
+    "s-border s-border-primary-200/0 s-text-primary-950 hover:s-bg-primary-100 hover:s-text-primary-900 active:s-bg-primary-200 hover:s-border-primary-200 disabled:s-text-primary-400",
+};
+
 const buttonVariants = cva(
   "s-inline-flex s-items-center s-justify-center s-whitespace-nowrap s-font-medium s-ring-offset-background s-transition-colors s-duration-200 focus-visible:s-outline-none focus-visible:s-ring-2 focus-visible:s-ring-ring focus-visible:s-ring-offset-2 disabled:s-pointer-events-none",
   {
     variants: {
-      variant: {
-        primary:
-          "s-bg-primary-800 s-text-primary-50 hover:s-text-white hover:s-bg-primary-600 active:s-bg-primary-900 disabled:s-bg-primary-400",
-        highlight:
-          "s-bg-action-500 s-text-white hover:s-bg-action-400 active:s-bg-action-600 disabled:s-bg-action-300",
-        warning:
-          "s-bg-warning-500 s-text-white hover:s-bg-warning-400 active:s-bg-warning-600  disabled:s-bg-warning-300",
-        outline:
-          "s-border s-text-primary-950 s-border-border-dark s-bg-background hover:s-text-primary-900 hover:s-bg-primary-100 hover:s-border-primary-200 active:s-bg-primary-300 disabled:s-text-primary-400 disabled:s-border-structure-100",
-        secondary:
-          "s-border s-border-primary-200/0 s-bg-primary-200 s-text-primary-950 hover:s-text-primary-900 hover:s-bg-primary-100 hover:s-border-primary-200 active:s-bg-primary-200 disabled:s-text-primary-500",
-        ghost:
-          "s-border s-border-primary-200/0 s-text-primary-950 hover:s-bg-primary-100 hover:s-text-primary-900 active:s-bg-primary-200 hover:s-border-primary-200 disabled:s-text-primary-400",
-        "ghost-secondary":
-          "s-border s-border-primary-200/0 s-text-muted-foreground hover:s-text-primary-600 hover:s-bg-primary-100 active:s-bg-primary-200 hover:s-border-primary-200 disabled:s-text-primary-400",
-      },
+      variant: variantButtonStyles,
       size: {
         xs: "s-h-7 s-px-2.5 s-rounded-lg s-text-xs s-gap-1.5",
         sm: "s-h-9 s-px-3 s-rounded-xl s-text-sm s-gap-2",
@@ -49,7 +59,7 @@ const buttonVariants = cva(
 
 type SpinnerVariant = NonNullable<SpinnerProps["variant"]>;
 
-const spinnerVariantsMap: Record<string, SpinnerVariant> = {
+const spinnerVariantsMap: Record<ButtonVariantType, SpinnerVariant> = {
   primary: "light",
   highlight: "light",
   warning: "light",
@@ -58,7 +68,7 @@ const spinnerVariantsMap: Record<string, SpinnerVariant> = {
   ghost: "dark",
 };
 
-const spinnerVariantsMapIsLoading: Record<string, SpinnerVariant> = {
+const spinnerVariantsMapIsLoading: Record<ButtonVariantType, SpinnerVariant> = {
   primary: "light",
   highlight: "light",
   warning: "light",
