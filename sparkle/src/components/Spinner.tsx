@@ -11,9 +11,12 @@ import animLightXS from "@sparkle/lottie/spinnerLight";
 import animLightLG from "@sparkle/lottie/spinnerLightLG";
 import animSimpleLight from "@sparkle/lottie/spinnerLightXS";
 
+const SPINNER_VARIANTS = ["color", "light" , "dark" , "pink900" , "purple900" , "slate400"] as const;
+type SpinnerVariantType = typeof SPINNER_VARIANTS[number];
+
 export interface SpinnerProps {
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-  variant?: "color" | "light" | "dark" | "pink900" | "purple900";
+  variant?: SpinnerVariantType;
 }
 
 const pxSizeClasses = {
@@ -37,6 +40,7 @@ const colors: { [key: string]: LottieColorType } = {
   red900: [0.498, 0.1137, 0.1137, 1], // #7F1D1D
   warning900: [0.498, 0.1137, 0.1137, 1], // #7F1D1D
   action900: [0.1176, 0.2275, 0.5412, 1], // #1E3A8A
+  slate400: [0.5804, 0.6392, 0.7216, 1], // #94A3B8
 };
 
 const isColorArray = (arr: unknown): arr is LottieColorType => {
