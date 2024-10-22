@@ -73,14 +73,12 @@ export {
   NewDropdownMenuSubTrigger,
   NewDropdownMenuTrigger,
 } from "./NewDropdown";
-export { NewInput } from "./NewInput";
 export {
   NewNavigationList,
   NewNavigationListItem,
   NewNavigationListLabel,
 } from "./NewNavigationList";
 export { NewSearchInput } from "./NewSearchInput";
-export { NewTextarea } from "./NewTextArea";
 export { Notification } from "./Notification";
 export { Page } from "./Page";
 export { PaginatedCitationsGrid } from "./PaginatedCitationsGrid";
