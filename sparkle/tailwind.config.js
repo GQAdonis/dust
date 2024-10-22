@@ -196,10 +196,14 @@ module.exports = {
           },
         },
         muted: {
-          DEFAULT: { DEFAULT: colors.slate[50], dark: colors.slate[900] },
+          DEFAULT: { DEFAULT: colors.slate[100], dark: colors.slate[900] },
           foreground: {
             DEFAULT: colors.slate[500],
             dark: colors.slate[500],
+          },
+          background: {
+            DEFAULT: colors.slate[100],
+            dark: colors.slate[900],
           },
         },
         highlight: {
@@ -300,6 +304,7 @@ module.exports = {
           0: { DEFAULT: colors.white, dark: colors.black },
           50: { DEFAULT: colors.slate[50], dark: colors.slate[900] },
           100: { DEFAULT: colors.slate[100], dark: colors.slate[800] },
+          150: { DEFAULT: "#E9EFF5", dark: "#172033" },
           200: { DEFAULT: colors.slate[200], dark: colors.slate[700] },
           300: { DEFAULT: colors.slate[300], dark: colors.slate[600] },
         },

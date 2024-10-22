@@ -14,7 +14,7 @@ export const menuStyleClasses = {
   ),
   item: cn(
     "s-relative s-flex s-gap-2 s-cursor-pointer s-select-none s-items-center s-outline-none",
-    "s-rounded-lg s-text-sm s-font-medium focus:s-text-primary-950 focus:s-bg-primary-100 s-px-2 s-py-2",
+    "s-rounded-lg s-text-sm s-font-medium focus:s-text-foreground focus:s-bg-muted-background s-px-2 s-py-2",
     "s-transition-colors s-duration-300 data-[disabled]:s-pointer-events-none data-[disabled]:s-text-primary-400"
   ),
   subTrigger: {
@@ -68,7 +68,7 @@ const ItemWithLabelIconAndDescription = <
   return (
     <>
       {label && (
-        <div className="s-grid s-grid-cols-[auto,1fr] s-gap-x-1">
+        <div className="s-grid s-grid-cols-[auto,1fr] s-gap-x-1.5">
           {icon && (
             <div
               className={cn(

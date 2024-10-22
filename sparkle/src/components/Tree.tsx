@@ -64,12 +64,11 @@ export function Tree({
 }
 
 const treeItemStyleClasses = {
-  base: "s-group/tree s-flex s-cursor-default s-flex-row s-items-center s-gap-2 s-py-1.5",
+  base: "s-group/tree s-flex s-cursor-default s-flex-row s-items-center s-gap-2 s-py-2",
   isNavigatableBase:
-    "s-rounded-xl s-pl-1.5 s-pr-3 s-border s-transition-colors s-duration-300 s-ease-out s-cursor-pointer",
-  isNavigatableUnselected:
-    "s-border-structure-200/0 s-bg-white/0 hover:s-border-structure-200 hover:s-bg-white",
-  isNavigatableSelected: "s-border-structure-200 s-bg-white",
+    "s-rounded-xl s-pl-1.5 s-pr-3 s-transition-colors s-duration-300 s-ease-out s-cursor-pointer",
+  isNavigatableUnselected: "s-bg-structure-150/0 hover:s-bg-structure-150",
+  isNavigatableSelected: "s-font-medium s-bg-structure-150",
 };
 
 interface TreeItemProps {
@@ -175,7 +174,7 @@ Tree.Item = function ({
         )}
         {type === "leaf" && <div className="s-w-4 s-flex-shrink-0"></div>}
         {checkbox && <Checkbox {...checkbox} size="xs" />}
-        <Icon visual={visual} size="xs" className={tailwindIconTextColor} />
+        <Icon visual={visual} size="sm" className={tailwindIconTextColor} />
         <div
           className={`s-font-regular s-truncate s-text-sm s-text-element-900 ${labelClassName}`}
         >
