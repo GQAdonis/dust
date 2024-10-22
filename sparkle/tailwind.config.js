@@ -172,11 +172,29 @@ module.exports = {
             DEFAULT: colors.slate[400],
             dark: colors.slate[600],
           },
+          warning: {
+            DEFAULT: colors.red[200],
+            dark: colors.red[800],
+          },
         },
         separator: { DEFAULT: colors.slate[200], dark: colors.slate[800] },
-        ring: { DEFAULT: colors.blue[300], dark: colors.slate[700] },
+        ring: {
+          DEFAULT: colors.blue[300],
+          dark: colors.slate[700],
+          warning: {
+            DEFAULT: colors.red[300],
+            dark: colors.red[700],
+          },
+        },
         background: { DEFAULT: colors.white, dark: colors.slate[950] },
-        foreground: { DEFAULT: colors.slate[950], dark: colors.white },
+        foreground: {
+          DEFAULT: colors.slate[950],
+          dark: colors.white,
+          warning: {
+            DEFAULT: colors.red[500],
+            dark: colors.red[500],
+          },
+        },
         muted: {
           DEFAULT: { DEFAULT: colors.slate[50], dark: colors.slate[900] },
           foreground: {
