@@ -72,6 +72,10 @@ module.exports = {
           "0%, 100%": { boxShadow: "0 0 0 0 var(--pulse-color)" },
           "50%": { boxShadow: "0 0 0 6px var(--pulse-color)" },
         },
+        "opacity-pulse": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        },
         "background-position-spin": {
           "0%": { backgroundPosition: "top center" },
           "100%": { backgroundPosition: "bottom center" },
@@ -153,6 +157,7 @@ module.exports = {
       },
       animation: {
         pulse: "pulse var(--duration) ease-out infinite",
+        "opacity-pulse": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "background-position-spin":
           "background-position-spin 2000ms infinite alternate",
         breathing: "breathing 3s infinite ease-in-out",

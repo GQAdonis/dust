@@ -2,7 +2,7 @@ import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
-import { Icon } from "@sparkle/components";
+import { NewButton } from "@sparkle/components";
 import { XMarkIcon } from "@sparkle/icons";
 import { cn } from "@sparkle/lib/utils";
 
@@ -20,7 +20,7 @@ const SheetOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Overlay
     className={cn(
-      "data-[state=open]:s-animate-in data-[state=closed]:s-animate-out data-[state=closed]:s-fade-out-0 data-[state=open]:s-fade-in-0 s-fixed s-inset-0 s-z-50 s-bg-black/80",
+      "data-[state=open]:s-animate-in data-[state=closed]:s-animate-out data-[state=closed]:s-fade-out-0 data-[state=open]:s-fade-in-0 s-fixed s-inset-0 s-z-50 s-bg-element-950/80",
       className
     )}
     {...props}
@@ -65,8 +65,7 @@ const SheetContent = React.forwardRef<
     >
       {children}
       <SheetPrimitive.Close className="focus:s-ring-ring data-[state=open]:s-bg-secondary s-absolute s-right-4 s-top-4 s-rounded-sm s-opacity-70 s-ring-offset-background s-transition-opacity hover:s-opacity-100 focus:s-outline-none focus:s-ring-2 focus:s-ring-offset-2 disabled:s-pointer-events-none">
-        <Icon visual={XMarkIcon} />
-        <span className="s-sr-only">Close</span>
+        <NewButton icon={XMarkIcon} variant="ghost" size="sm" />
       </SheetPrimitive.Close>
     </SheetPrimitive.Content>
   </SheetPortal>
