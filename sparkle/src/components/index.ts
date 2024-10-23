@@ -100,6 +100,19 @@ export {
 export { ScrollArea } from "./ScrollArea";
 export { Searchbar } from "./Searchbar";
 export { Separator } from "./Separator";
+export {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetOverlay,
+  SheetPortal,
+  SheetTitle,
+  SheetTrigger,
+} from "./Sheet";
+export { Skeleton } from "./Skeleton";
 export { SliderToggle } from "./SliderToggle";
 export { default as Spinner } from "./Spinner";
 export { Switch } from "./Switch";
